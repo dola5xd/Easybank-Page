@@ -1,7 +1,7 @@
 let header = document.getElementsByTagName("header")[0];
-document.getElementById("menu").onclick = (e) => {
+document.getElementById("menu").addEventListener("click", (e) => {
   let div = document.createElement("div");
-  if (document.body.children.length === 7) {
+  if (document.getElementsByClassName("menux")[0] === undefined) {
     let ul = document.createElement("ul");
     for (let i = 0; i < 5; i++) {
       let li = document.createElement("li");
@@ -50,7 +50,7 @@ document.getElementById("menu").onclick = (e) => {
       left: 50%;
       transform: translate(-50%, 22px);
       `;
-      div.classList.add("menu");
+      div.classList.add("menux");
 
       document.body.append(div);
     }
@@ -83,6 +83,6 @@ document.getElementById("menu").onclick = (e) => {
       "0";
     document.getElementById("menu").querySelectorAll("span")[2].style.rotate =
       "0deg";
-    document.getElementsByClassName("menu")[0].remove();
+    document.getElementsByClassName("menux")[0].remove();
   }
-};
+});
